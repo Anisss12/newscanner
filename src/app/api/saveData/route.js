@@ -50,12 +50,23 @@ export async function PUT(req) {
   }
 }
 
+
+
 export async function DELETE(req) {
   try {
-    const existingData = loadData();
-    const { ids } = await req.json(); // Expect an array of IDs
+    console.log("DELETE request received");
 
+    // Load existing data
+    const existingData = loadData();
+    console.log("Existing data loaded:", existingData);
+
+    // Parse the request body
+    const { ids } = await req.json();
+    console.log("Received IDs to delete:", ids);
+
+    // Validate the request body
     if (!ids || !Array.isArray(ids)) {
+      console.error("Invalid request: 'ids' must be an array");
       return NextResponse.json(
         { message: "Invalid request: 'ids' must be an array" },
         { status: 400 }
@@ -64,17 +75,20 @@ export async function DELETE(req) {
 
     // Filter out the items to delete
     const deletedData = existingData.filter((item) => ids.includes(item.id));
+    console.log("Items to delete:", deletedData);
 
     if (deletedData.length > 0) {
       // Save the remaining data
       const updatedData = existingData.filter((item) => !ids.includes(item.id));
       saveData(updatedData);
+      console.log("Data saved successfully");
 
       return NextResponse.json(
         { message: "Data deleted successfully", data: deletedData },
         { status: 200 }
       );
     } else {
+      console.error("No matching data found");
       return NextResponse.json(
         { message: "No matching data found" },
         { status: 404 }
@@ -83,7 +97,7 @@ export async function DELETE(req) {
   } catch (error) {
     console.error("Delete error:", error);
     return NextResponse.json(
-      { message: "Internal server error" },
+      { message: "Internal server error", error: error.message },
       { status: 500 }
     );
   }
