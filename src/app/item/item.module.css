@@ -1,0 +1,171 @@
+.container {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  background: var(--secondary-bg);
+  padding: 2vh;
+  list-style: none;
+  width: 100vw;
+  position: relative;
+}
+.container ul li {
+  list-style: none;
+  width: 20%;
+}
+
+.container ul {
+  display: flex;
+  width: 100%;
+  color: var(--text-color);
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+}
+
+.searchSection {
+  width: 100%;
+  display: flex;
+  height: 6vh;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1vh;
+}
+.inputField {
+  display: flex;
+  border: 1px solid white;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  border-radius: 0.5vh;
+  width: 75%;
+}
+
+.inputField input {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.filterButton {
+  height: 100%;
+  border: 1px solid white;
+  width: 20%;
+  padding: 1vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0.5vh;
+  justify-content: space-between;
+}
+
+.filterButton h2 {
+  font-size: 1.5vh;
+  text-transform: uppercase;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2vh;
+  top: 0vh;
+  position: fixed;
+  left: 0vh;
+  background: var(--primary-bg);
+}
+
+.nav {
+  border-bottom: 1px solid white;
+}
+.items {
+  padding-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5vh;
+  width: 100%;
+  justify-content: space-between;
+  gap: 3vh;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.sizes,
+.colors,
+.design,
+.price,
+.dateTime {
+  flex-direction: column;
+}
+
+.sizes li,
+.colors li,
+.design li,
+.price li,
+.dateTime li {
+  color: white;
+}
+
+.itemBox {
+  padding-top: 12vh;
+}
+.item {
+  border: 1px solid var(--border-color);
+  background: var(--primary-bg);
+  padding: 1vh;
+  font-size: 1.5vh;
+  gap: 3vh;
+}
+
+.filterSection {
+  position: fixed;
+  bottom: 0vh;
+  left: 0vh;
+  width: 100%;
+  background: var(--primary-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  padding: 2vh;
+}
+
+.filterInfo {
+  font-size: 2vh;
+  padding: 2vh;
+  border-bottom: 2px solid var(--secondary-bg);
+  margin-bottom: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filterSelect {
+  height: 4vh;
+  width: 70%;
+  background: var(--secondary-bg);
+  border-radius: 0.5vh;
+  outline: none;
+  border: none;
+  padding: 1vh;
+}
+
+.filterSelect :hover {
+  background: var(--primary-bg);
+}
+
+.filterSelection {
+  display: flex;
+  flex-direction: row;
+  gap: 2vh;
+  justify-content: space-between;
+  align-items: center;
+}
+.filterSelection h2 {
+  font-size: 1.5vh;
+  width: 20%;
+}
